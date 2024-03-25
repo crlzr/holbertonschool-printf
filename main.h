@@ -16,7 +16,7 @@
 typedef struct conversion
 {
     char *string;
-    int(*f)(va_list);
+    int (*f)(va_list);
 
 } format_t;
 
