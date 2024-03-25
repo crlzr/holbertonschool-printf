@@ -4,6 +4,9 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
+#include <string.h>
+#include <unistd.h>
 
 /**
  * struct conversion - template for a structure
@@ -16,6 +19,7 @@ typedef struct conversion
     int(*f)(va_list);
 
 } format_t;
+
 int _printf(const char *format, ...);
 int _write_char(char c);
 int format_spec(const char *format, format_t get_opt[], va_list list);
