@@ -6,10 +6,11 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
-int set_char(va_list);
-int set_string(va_list);
-int set_percent(va_list);
+int set_char(va_list list);
+int set_string(va_list list);
+int set_percent(va_list list);
 int _write_char(char c);
+int _putchar(char c);
 
 /**
  * struct conversion - template for a structure
