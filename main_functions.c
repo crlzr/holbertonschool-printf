@@ -42,4 +42,3 @@ int set_percent(va_list list __attribute__((unused)))
 {
 	_write_char('%');
 	return (1);
-}
