@@ -5,9 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int _printf(const char *format, ...);
-int _write_char(char c);
-
 /**
  * struct conversion - template for a structure
  * @string: the operator
@@ -19,7 +16,8 @@ typedef struct conversion
     int(*f)(va_list);
 
 } format_t;
-
+int _printf(const char *format, ...);
+int _write_char(char c);
 int format_spec(const char *format, format_t get_opt[], va_list list);
 int set_char(va_list list);
 int set_string(va_list list);
