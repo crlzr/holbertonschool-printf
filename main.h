@@ -1,18 +1,27 @@
 #ifndef HEADER_FILE
 #define HEADER_FILE
 
+#include <stddef.h>
+#include <stdio.h>
+
 int _printf(const char *format, ...);
+int _write_char(char c);
+int set_char(va_list list);
+int set_string(va_list list);
+int set_percent(va_list list __attribute__((unused)));
 
 /**
  * struct conversion - template for a structure
  * @string: the operator
  * @f: pointer to a function
  */
-struct conversion
+typedef struct conversion
 {
     char *string;
     int(*f)(va_list);
 
-}; typedef struct conversion format_t;
+} format_t;
+
+int format_spec(const char *format, format_t get_opt[], va_list list);
 
 #endif
