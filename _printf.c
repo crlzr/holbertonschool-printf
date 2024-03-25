@@ -10,8 +10,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	va_list list;
+	int i;
 
 	format_t get_opt[] = {
 	{"c", set_char},
@@ -19,6 +18,8 @@ int _printf(const char *format, ...)
 	{"%", set_percent},
 	{NULL, NULL}
 	};
+
+	va_list list;
 
 	if (format == NULL)
 	{
@@ -30,6 +31,5 @@ int _printf(const char *format, ...)
 	i = format_spec(format, get_opt, list);
 
 	va_end(list);
-
 	return (i);
 }
