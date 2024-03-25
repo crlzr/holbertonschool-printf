@@ -10,7 +10,10 @@
  */
 int format_spec(const char *format, format_t get_opt[], va_list list)
 {
-	int i, j, ret, count = 0;
+	int i;
+	int j;
+	int ret;
+	int count;
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
