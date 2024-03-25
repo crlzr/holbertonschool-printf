@@ -3,32 +3,32 @@
 #include <stdarg.h>
 
 /**
- * _printf - produces output according to format
- * @format: pointer to strings
- * Return: pointer to index
+ * _printf - Produces output according to format
+ * @format: Pointer to format string
+ * Return: Number of characters printed
  */
 int _printf(const char *format, ...)
 {
-    int i = 0;
-    va_list list;
+	int i = 0;
+	va_list list;
 
-    format_t get_opt[] = {
-        {"c", set_char},
-        {"s", set_string},
-        {"%", set_percent},
-        {NULL, NULL}
-    };
+	format_t get_opt[] = {
+	{"c", set_char},
+	{"s", set_string},
+	{"%", set_percent},
+	{NULL, NULL}
+	};
 
-    if (format == NULL)
-    {
-        return (-1);
-    }
+	if (format == NULL)
+	{
+		return (-1);
+	}
 
-    va_start(list, format);
+	va_start(list, format);
 
-    i = format_spec(format, get_opt, list);
+	i = format_spec(format, get_opt, list);
 
-    va_end(list);
-    return (i);
+	va_end(list);
+
+	return (i);
 }
-
