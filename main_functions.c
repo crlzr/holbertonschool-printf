@@ -10,7 +10,7 @@
 
 int set_char(va_list list)
 {
-	_write_char(va_arg(list, int)); 
+	_write_char(va_arg(list, int));
 	return (1);
 }
 
