@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-    int i;      /* loop counter */
+    int i = 0;
     va_list list;
 
     format_t get_opt[] = {
