@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include "main.h"
 
 /**
  * format_spec - Format specification function.
@@ -17,7 +18,7 @@ int format_spec(const char *format, format_t get_opt[], va_list list)
 		{
 			for (j = 0; get_opt[j].string != NULL; j++)
 			{
-				if (format[i + 1] == get_opt[j].sym[0])
+				if (format[i + 1] == get_opt[j].string[0])
 				{
 					ret = get_opt[j].f(list);
 					if (ret == -1)
