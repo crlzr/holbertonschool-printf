@@ -10,7 +10,7 @@
 
 int set_char(va_list list)
 {
-	_write_char(va_arg(list, int));
+	_write_char(va_arg(list, int)); 
 	return (1);
 }
 
@@ -43,4 +43,3 @@ int set_percent(va_list list __attribute__((unused)))
 	_write_char('%');
 	return (1);
 }
-
