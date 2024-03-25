@@ -25,6 +25,6 @@ int _write_char(char c);
 int format_spec(const char *format, format_t get_opt[], va_list list);
 int set_char(va_list list);
 int set_string(va_list list);
-int set_percent(va_list list __attribute__((unused)));
+int set_percent(va_list list);
 
 #endif
