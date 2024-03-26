@@ -10,26 +10,25 @@
  */
 int _printf(const char *format, ...)
 {
-    int i; /* Loop counter */
-    va_list list;
+	int i; /* Loop counter */
+	va_list list;
 
-    format_t get_opt[] = {
-        {"c", set_char},
-        {"s", set_string},
-        {"%", set_percent},
-        {NULL, NULL}
-    };
+	format_t get_opt[] = {
+		{"c", set_char},
+		{"s", set_string},
+		{"%", set_percent},
+		{NULL, NULL}
+	};
 
-    if (format == NULL)
-    {
-        return (-1);
-    }
+	if (format == NULL)
+	{
+		return (-1);
+	}
 
-    va_start(list, format);
+	va_start(list, format);
 
-    i = formatspec(format, get_opt, list); /* Using formatspec */
+	i = formatspec(format, get_opt, list); /* Using formatspec */
 
-    va_end(list);
-    return (i);
+	va_end(list);
+	return (i);
 }
-
