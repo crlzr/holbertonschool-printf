@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * format_spec - Format specification function.
+ * formatspec - Format specification function.
  * @format: The format string.
  * @get_opt: Array of format_t structures.
  * @list: The variable argument list.
@@ -11,23 +11,16 @@
  */
 int formatspec(const char *format, format_t get_opt[], va_list list)
 {
-	int i;
-	int j;
-	int ret;
-	int count = 0; /* Initialize count */
-	
-	/* Loop through each character of format string */
+	int i, j, ret, count = 0;
+
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
-			/* Loop through format_t array */
 			for (j = 0; get_opt[j].string != NULL; j++)
 			{
-				/* i + 1 = specifier, check if it matches symbol */
 				if (format[i + 1] == get_opt[j].string[0])
 				{
-					/* calls function pointed to by f */
 					ret = get_opt[j].f(list);
 					if (ret == -1)
 						return (-1);
@@ -35,7 +28,6 @@ int formatspec(const char *format, format_t get_opt[], va_list list)
 					break;
 				}
 			}
-			
 			if (get_opt[j].string == NULL && format[i + 1] != ' ')
 			{
 				if (format[i + 1] != '\0')
@@ -55,7 +47,6 @@ int formatspec(const char *format, format_t get_opt[], va_list list)
 			count++;
 		}
 	}
-	
 	return (count);
 }
 
