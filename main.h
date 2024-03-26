@@ -9,7 +9,6 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-
 /**
  * struct conversion - template for a structure
  * @string: the operator
@@ -22,12 +21,11 @@ typedef struct conversion
 	int (*f)(va_list list);
 
 } format_t;
-
+int formatspec(const char *format, format_t get_opt[], va_list list);
 int _write_char(char c);
 int set_char(va_list list);
 int set_string(va_list list);
 int set_percent(va_list list);
 int set_intone(va_list list);
 int set_inttwo(va_list list);
-
 #endif
