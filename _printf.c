@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 
     va_start(list, format);
 
-    i = formatspec(format, get_opt, list);
+    i = formatspec(format, get_opt, list); /* Using formatspec */
 
     va_end(list);
     return (i);
