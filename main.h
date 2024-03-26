@@ -30,4 +30,5 @@ int set_intone(va_list list);
 int set_inttwo(va_list list);
 int print_unsigned_number(unsigned int list);
 int print_number(va_list list);
+int print_binary(va_list list);
 #endif
