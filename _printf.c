@@ -12,15 +12,16 @@ int _printf(const char *format, ...)
 {
 
 	format_t get_opt[] = {
-	{"c", set_char},
-	{"s", set_string},
-	{"%", set_percent},
-	{NULL, NULL}
+		{"c", set_char},
+		{"s", set_string},
+		{"%", set_percent},
+		{"d", set_intone},
+		{"i", set_inttwo},
 	};
 	
-	int i;
-	int j;
-	int ret;
+	int i = 0;
+	int j = 0;
+	char ret;
 	int count = 0;
 	va_list list;
 
@@ -28,44 +29,33 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-
+	
 	va_start(list, format);
+	
+	while (format[i] != '\0')
+	{
+		if (format[i] == '%')
+		{
+			ret  = format[i + 1];
+			i++;
+			
+			j = 0;
+			while (j < 5)
+			{
+				 if (*get_opt[j].string == ret)
+				{
+					get_opt[j].f(list);
+				}
+				j++;
+			}	
+		}
 
-        /* Loop through each character of format string */
-        for (i = 0; format[i] != '\0'; i++)
-        {
-                if (format[i] == '%')
-                {       /* Loop through format_t array */
-                        for (j = 0; get_opt[j].string != NULL; j++)
-                        {       /* i + 1 = specifier, check if it matches symbol */
-                                if (format[i + 1] == get_opt[j].string[0])
-                                {       /* calls function pointed to by f*/
-                                        ret = get_opt[j].f(list);
-                                        if (ret == -1)
-                                                return (-1);
-                                        count += ret;
-                                        break;
-                                }
-                        }
-                        if (get_opt[j].string == NULL && format[i + 1] != ' ')
-                        {
-                                if (format[i + 1] != '\0')
-                                {
-                                        _write_char(format[i]);
-                                        _write_char(format[i + 1]);
-                                        count += 2;
-                                }
-                                else
-                                        return (-1);
-                        }
-                        i++;
-                }
-                else
-                {
-                        _write_char(format[i]);
-                        count++;
-                }
-        }
+		else
+		{
+			printf("%c", format[i]);
+		}
+		i++;
+	}
 	va_end(list);
         return (count);
 }

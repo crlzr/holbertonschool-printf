@@ -18,13 +18,16 @@
 typedef struct conversion
 {
     char *string;
-    int (*f)(va_list *);
+    int (*f)(va_list list);
 
 } format_t;
 
 int _printf(const char *format, ...);
 int _write_char(char c);
-int set_char(va_list *);
-int set_string(va_list *);
-int set_percent(va_list *);
+int set_char(va_list list);
+int set_string(va_list list);
+int set_percent(va_list list);
+int set_intone(va_list list);
+int set_inttwo(va_list list);
+
 #endif
