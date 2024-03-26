@@ -28,4 +28,6 @@ int set_string(va_list list);
 int set_percent(va_list list);
 int set_intone(va_list list);
 int set_inttwo(va_list list);
+int print_number(va_list list);
+int print_unsgned_number(unsigned int list);
 #endif
