@@ -70,6 +70,6 @@ int set_inttwo(va_list list)
 	num = va_arg(list, int);
 
 	if (num == 0)
-		return (print_unsgned_number(num));
-	return (print_unsgned_number(num));
+		return (print_unsigned_number(num));
+	return (print_unsigned_number(num));
 }

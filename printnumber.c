@@ -4,18 +4,14 @@
  * print_number - print a number
  * @list: list of numbers
  * Return: The number of arguments printed
- */
+
 
 int print_number(va_list list)
 {
-	int n;
-	int div;
-	int len;
+	int n = va_arg(list, int);
+	int div = 1;
+	int len = 0;
 	unsigned int num;
-
-	n = va_arg(list, int);
-	div = 1;
-	len = 0;
 
 	if (n < 0)
 	{
@@ -38,11 +34,10 @@ int print_number(va_list list)
 	return (len);
 }
 
-/**
  * print_unsgned_number - print an unsigned number
  * @list: list of unsigned numbers
  * Return: The number of arguments printed
- */
+ 
 
 int print_unsgned_number(unsigned int list)
 {
@@ -66,4 +61,4 @@ int print_unsgned_number(unsigned int list)
 
 	return (len);
 }
-
+*/
