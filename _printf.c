@@ -10,7 +10,6 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0;
 
 	format_t get_opt[] = {
 	{"c", set_char},
@@ -18,7 +17,11 @@ int _printf(const char *format, ...)
 	{"%", set_percent},
 	{NULL, NULL}
 	};
-
+	
+	int i;
+	int j;
+	int ret;
+	int count = 0;
 	va_list list;
 
 	if (format == NULL)
@@ -27,20 +30,7 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(list, format);
-	va_end(list);
-	return (i);
-}
 
-/* 
- * Code for format specifier
- */
-
-int format_spec(const char *format, format_t get_opt[], va_list list)
-{
-        int i;
-        int j;
-        int ret;
-        int count = 0;
         /* Loop through each character of format string */
         for (i = 0; format[i] != '\0'; i++)
         {
@@ -76,5 +66,7 @@ int format_spec(const char *format, format_t get_opt[], va_list list)
                         count++;
                 }
         }
+	va_end(list);
         return (count);
 }
+
