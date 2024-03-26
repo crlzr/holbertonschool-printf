@@ -46,10 +46,12 @@ int set_percent(va_list list __attribute__((unused)))
 
 int set_intone(va_list list)
 {
+	_write_char(va_arg(list, int));
 	return (0);
 }
 
 int set_inttwo (va_list list)
 {
+	_write_char(va_arg(list, int));
 	return (0);
 }
