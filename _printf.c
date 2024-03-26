@@ -44,7 +44,8 @@ int _printf(const char *format, ...)
 			{
 				 if (*get_opt[j].string == ret)
 				{
-					get_opt[j].f(list);
+					 get_opt[j].f(list);
+					count++;
 				}
 				j++;
 			}	
@@ -53,6 +54,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			printf("%c", format[i]);
+			count++;
 		}
 		i++;
 	}
