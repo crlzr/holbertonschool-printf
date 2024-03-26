@@ -43,13 +43,25 @@ int set_percent(va_list list __attribute__((unused)))
 	return (1);
 }
 
+/**
+ * set_intone - print an int
+ * @list: list of arguments
+ * Return: Will return the number of ints printed
+ */
+
 int set_intone(va_list list)
 {
 	_write_char(va_arg(list, int));
 	return (0);
 }
 
-int set_inttwo (va_list list)
+/**
+ * set_inttwo - print an int
+ * @list: list of arguments
+ * Return: Will return the number of ints printed
+ */
+
+int set_inttwo(va_list list)
 {
 	_write_char(va_arg(list, int));
 	return (0);

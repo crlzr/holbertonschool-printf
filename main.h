@@ -18,8 +18,8 @@ int _printf(const char *format, ...);
 
 typedef struct conversion
 {
-    char *string;
-    int (*f)(va_list list);
+	char *string;
+	int (*f)(va_list list);
 
 } format_t;
 
