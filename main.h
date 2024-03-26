@@ -8,9 +8,6 @@
 #include <string.h>
 #include <unistd.h>
 
-int set_char(va_list list);
-int set_string(va_list list);
-int set_percent(va_list list);
 
 /**
  * struct conversion - template for a structure
@@ -21,12 +18,14 @@ int set_percent(va_list list);
 typedef struct conversion
 {
     char *string;
-    int (*f)(va_list);
+    int (*f)(va_list *);
 
 } format_t;
 
 int _printf(const char *format, ...);
 int _write_char(char c);
 int format_spec(const char *format, format_t get_opt[], va_list list);
-
+int set_char(va_list *);
+int set_string(va_list *);
+int set_percent(va_list *);
 #endif
