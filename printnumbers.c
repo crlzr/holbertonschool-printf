@@ -12,24 +12,21 @@ int print_number(va_list list)
     int len = 0;
     unsigned int num;
 
-    // Handle negative numbers
     if (n < 0)
     {
         len += _write_char('-');
-        num = (unsigned int)(-n); // Convert negative number to unsigned
+        num = (unsigned int)(-n);
     }
     else
     {
-        num = (unsigned int)n; // Convert positive number to unsigned
+        num = (unsigned int)n;
     }
 
-    // Calculate the divisor based on the number of digits in num
     while (num / div > 9)
     {
         div *= 10;
     }
 
-    // Print each digit of num
     while (div != 0)
     {
         len += _write_char('0' + num / div);
@@ -51,13 +48,11 @@ int print_unsigned_number(unsigned int list)
     unsigned int num = list;
     unsigned int div = 1;
 
-    // Calculate the divisor based on the number of digits in num
     while (num / div > 9)
     {
         div *= 10;
     }
 
-    // Print each digit of num
     while (div != 0)
     {
         len += _write_char('0' + num / div);
