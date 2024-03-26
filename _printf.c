@@ -43,8 +43,7 @@ int _printf(const char *format, ...)
 			{
 				 if (*get_opt[j].string == ret)
 				{
-					 get_opt[j].f(list);
-					count++;
+					count +=  get_opt[j].f(list);
 				}
 				j++;
 			}	
@@ -58,6 +57,7 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(list);
+	printf("Characters: %i", count);
         return (count);
 }
 
