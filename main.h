@@ -1,34 +1,21 @@
-#ifndef HEADER_FILE
-#define HEADER_FILE
-
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdarg.h>
-#include <string.h>
+#include <stdlib.h>
 #include <unistd.h>
-
-int _printf(const char *format, ...);
-/**
- * struct conversion - template for a structure
- * @string: the operator
- * @f: pointer to a function
- */
-
-typedef struct conversion
+#include <string.h>
+#include <stdio.h>
+typedef struct print
 {
-	char *string;
-	int (*f)(va_list list);
+	char c;
+	int (*f)(va_list);
+} print_t;
+int _printf(const char *format, ...);
+int get_function(const char s, va_list args);
 
-} format_t;
-int formatspec(const char *format, format_t get_opt[], va_list list);
-int _write_char(char c);
-int set_char(va_list list);
-int set_string(va_list list);
-int set_percent(va_list list);
-int set_intone(va_list list);
-int set_inttwo(va_list list);
-int print_unsigned_number(unsigned int list);
-int print_number(va_list list);
-int print_binary(va_list list);
+int printint(va_list arg);
+int printpercent(va_list arg);
+int printstring(va_list arg);
+int printcharacter(va_list arg);
+
 #endif

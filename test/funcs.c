@@ -51,10 +51,8 @@ int set_percent(va_list list __attribute__((unused)))
 
 int set_intone(va_list list)
 {
-	int length;
 
-	length = print_number(list);
-	return (length);
+	return (0);
 }
 
 /**
@@ -65,11 +63,6 @@ int set_intone(va_list list)
 
 int set_inttwo(va_list list)
 {
-	unsigned int num;
+	return (0);
 
-	num = va_arg(list, int);
-
-	if (num == 0)
-		return (print_unsigned_number(num));
-	return (print_unsigned_number(num));
 }
