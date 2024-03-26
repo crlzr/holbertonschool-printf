@@ -1,7 +1,6 @@
-#include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
-
+#include "main.h"
 /**
  * set_char - print a character
  * @list: list of characters
