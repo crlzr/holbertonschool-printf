@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 
 		else
 		{
-			printf("%c", format[i]);
+			_write_char(format[i]);
 			count++;
 		}
 		i++;

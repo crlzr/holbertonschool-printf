@@ -9,7 +9,7 @@
 
 int set_char(va_list list)
 {
-	printf("%c", va_arg(list, int));
+	_write_char(va_arg(list, int));
 	return (1);
 }
 
