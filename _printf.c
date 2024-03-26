@@ -35,6 +35,11 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i] == '\0')
+			{
+				return (-1);
+			}
+
 			ret  = format[i + 1];
 			i++;
 			
