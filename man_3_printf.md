@@ -21,7 +21,7 @@ Conversion specifiers are introduced by the character ```%``` and are followed b
 * ```%c```: Formats and prints a single character.
 * ```%s```: Formats and prints a string of characters.
 * ```%d```: Formats and prints a signed decimal integer.
-* ```%i```: Formats and prints a unsigned decimal integer (equivalent to ```%d).
+* ```%i```: Formats and prints a unsigned decimal integer (equivalent to ```%d```).
 * ```%i```: Formats and prints a unsigned decimal integer (equivalent to ```%d```).
 * ```%%```: Formats and prints a single percent sign (```%```).
 
